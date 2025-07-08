@@ -3,6 +3,7 @@ import ProductCard from './ProductCard';
 import './ProductList.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import path from path;
 
 
 
