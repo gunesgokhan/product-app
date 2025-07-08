@@ -1,18 +1,24 @@
+// backend/server.js
 const express = require('express');
-const cors = require('cors'); // CORS'u import edin
+const cors = require('cors');
+const productRoutes = require('./routes/productRoutes'); // Product router'ı import et
+
 const app = express();
-const PORT = process.env.PORT || 5000; // Portu environment değişkeninden veya 5000'den al
+
+const PORT = process.env.PORT || 5000;
 
 // Middlewares
-app.use(cors()); // CORS'u tüm isteklere uygulayın
-app.use(express.json()); // JSON istek gövdelerini ayrıştırmak için
+app.use(cors());
+app.use(express.json());
 
-// Basit bir test route'u
+// Product routes'u kullan
+app.use('/api/products', productRoutes); // Tüm ürün istekleri buraya yönlendirilecek
+
+// Basit bir test route'u (isteğe bağlı olarak bırakılabilir veya silinebilir)
 app.get('/', (req, res) => {
     res.send('Backend API is running!');
 });
 
-// Sunucuyu dinlemeye başla
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
