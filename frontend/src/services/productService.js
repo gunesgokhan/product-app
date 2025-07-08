@@ -1,6 +1,6 @@
 // src/services/productService.js
 import axios from 'axios';
-const API_BASE_URL = 'https://product-app-h6ik.onrender.com/';
+const API_BASE_URL = 'https://product-app-h6ik.onrender.com/api';
 
 export const getProducts = async (filters = {}) => {
     try {
